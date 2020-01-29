@@ -1,0 +1,23 @@
+<!-- <<md-input-container>
+  <label>Search</label>
+  <input [(ngModel)]="searchbox"/>
+</md-input-container>> -->
+<!-- <form>
+<mat-form-field>
+<input type="text" matInput [formControl]="myControl" [(ngModel)]="searchbox" />
+</mat-form-field>
+</form> -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" [(ngModel)]="searchbox">
+    </mat-form-field>
+   
+        <button mat-stroked-button color="primary" (click)="search()" routerLink="/cards">Search</button>
+    
+
+<!-- <input [(ngModel)]="searchbox" matInput type="text"/>
+<button mat-flat-button (click)="search()" routerLink="/cards">Search</button> -->
+
+<!-- <button routerLink="/viewAll">Wishlist</button>
+<router-outlet></router-outlet> -->

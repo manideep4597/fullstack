@@ -1,0 +1,39 @@
+<h2>Movies from Wishlist</h2>
+    <!-- <ul>
+        <li *ngFor="let movie of moviesDB; let in=index">
+            {{ movie.id}},{{movie.title}},{{movie.language}},{{movie.releaseDate}}
+        {{movie.comments}}
+        <input type="text" [(ngModel)]="movie.comments"><a><button (click)=update(movie) >Update {{movie.title}}</button></a>
+        <a><button (click)=delete(movie) >Delete {{movie.title}}</button></a>
+        </li>
+    </ul> -->
+    <mat-grid-list>
+    <mat-card class="example-card">
+            <ul *ngFor="let movie of moviesDB">
+                <!-- <mat-grid-title> -->
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{movie.title}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{ movie.poster_path }}" alt="Movie Poster">
+            <mat-card-content>
+              <p>ID:{{movie.id}}</p>
+              <p>Lang:{{movie.original_language}}</p>
+              <p>Release Date:{{movie.releaseDate}}</p>
+              <p>
+                Overview: {{movie.overview}}
+              </p>
+              <p>
+                Comments: {{movie.comments}}
+              </p>
+              
+            </mat-card-content>
+            <mat-card-actions>
+              <input matInput type="text" [(ngModel)]="movie.comments">
+              <a><button mat-button (click)=update(movie) >Update {{movie.title}}</button></a>
+              <a><button mat-button (click)=delete(movie) >Delete {{movie.title}}</button></a>
+            </mat-card-actions>
+        <!-- </mat-grid-title> -->
+            </ul>
+          </mat-card>
+        </mat-grid-list>  

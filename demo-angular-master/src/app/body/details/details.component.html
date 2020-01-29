@@ -1,0 +1,36 @@
+
+<!-- <router-outlet></router-outlet>  -->
+<app-searchdumb (sendToParent)="onReceiving($event)"></app-searchdumb>
+<h2>Movies from IMDB</h2>
+    <!-- <ul>
+        <li *ngFor="let movie of movieList.results">
+            {{ movie.id}},{{movie.original_language}},,{{movie.release_date}}
+        <img src="https://image.tmdb.org/t/p/w200/{{ movie.poster_path }}">
+        <input type="text" [(ngModel)]="movie.comments"><a><button (click)=gonsave(movie) >Add {{movie.title}}</button></a>
+        {{result}}
+        <app-addbtn [movie]=movie></app-addbtn>
+        </li>
+    </ul> -->
+    <!-- <router-outlet></router-outlet> -->
+    <mat-card class="example-card">
+        <ul *ngFor="let movie of movieList.results">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{movie.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://image.tmdb.org/t/p/w200/{{ movie.poster_path }}" alt="Movie Poster">
+        <mat-card-content>
+          <p>ID:{{movie.id}}</p>
+          <p>Lang:{{movie.original_language}}</p>
+          <p>Release Date:{{movie.release_date}}</p>
+          <p>
+            Overview: {{movie.overview}}
+          </p>
+          
+        </mat-card-content>
+        <mat-card-actions>
+          <input matInput type="text" [(ngModel)]="movie.comments">
+          <a><button mat-button (click)=gonsave(movie) >Add {{movie.title}}</button></a>
+        </mat-card-actions>
+        </ul>
+      </mat-card>
